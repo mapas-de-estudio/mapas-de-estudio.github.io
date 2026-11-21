@@ -354,6 +354,15 @@ nav.side a.tall b{color:var(--wine)}
 .backhome{display:inline-flex;align-items:center;gap:6px;margin-bottom:14px;padding:6px 12px;border:1px solid rgba(217,183,94,.6);border-radius:999px;color:#d9b75e;text-decoration:none;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em}
 .backhome:hover,.backhome:focus-visible{background:rgba(217,183,94,.15)}
 nav.side .home-link{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.examcta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:12px 22px;border-radius:10px;background:#dcb860;color:#161b30;font-family:var(--body);font-weight:700;font-size:17px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.examcta small{font-family:var(--mono);font-weight:500;font-size:12px;opacity:.8}
+.examcta:hover,.examcta:focus-visible{filter:brightness(1.08)}
+.examfab{position:fixed;right:18px;bottom:18px;z-index:20;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:#dcb860;color:#161b30;font-family:var(--body);font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:opacity .2s,transform .2s}
+.examfab:hover,.examfab:focus-visible{filter:brightness(1.08)}
+.examfab.hide{opacity:0;transform:translateY(12px);pointer-events:none}
+@media (prefers-reduced-motion: reduce){.examfab{transition:none}}
+@media (max-width:560px){.examfab{right:12px;bottom:12px;padding:11px 16px;font-size:15px}}
+nav.side .exam-link{background:#dcb860;color:#161b30 !important;border-color:#dcb860 !important}
 </style>
 </head>
 <body>
@@ -367,7 +376,8 @@ nav.side .home-link{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
   <div class="stats">
    <div><b>10</b>clases</div><div><b>286</b>diapositivas</div><div><b>232</b>citas bíblicas</div><div><b>97</b>preguntas en el banco</div>
   </div>
- </div>
+ <a class="examcta" href="#examen">✎ Ir al examen de práctica <small>segundo corte · clases 6–10</small></a>
+</div>
 </header>
 
 <div class="layout">
@@ -657,6 +667,12 @@ nav.side .home-link{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
     $('#examen').scrollIntoView({block:'start'});
   }
 })();
+</script>
+<a class="examfab" id="examfab" href="#examen" aria-label="Ir al examen de práctica">✎ Examen</a>
+<script>
+(function(){try{const fab=document.getElementById('examfab'),ex=document.getElementById('examen');
+if(!fab||!ex||!('IntersectionObserver' in window))return;
+new IntersectionObserver(es=>{es.forEach(e=>fab.classList.toggle('hide',e.isIntersecting));},{threshold:0.05}).observe(ex);}catch(e){}})();
 </script>
 </body>
 </html>
