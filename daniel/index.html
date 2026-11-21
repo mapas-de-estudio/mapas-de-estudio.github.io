@@ -351,12 +351,16 @@ nav.side a.tall b{color:var(--wine)}
 .sum ul{margin:0;padding-left:20px;font-size:15px}
 .sum li{margin:4px 0}
 @media (max-width:600px){.mrow{grid-template-columns:1fr}}
+.backhome{display:inline-flex;align-items:center;gap:6px;margin-bottom:14px;padding:6px 12px;border:1px solid rgba(217,183,94,.6);border-radius:999px;color:#d9b75e;text-decoration:none;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em}
+.backhome:hover,.backhome:focus-visible{background:rgba(217,183,94,.15)}
+nav.side .home-link{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
 </style>
 </head>
 <body>
 <header class="hero">
  <canvas id="stars" aria-hidden="true"></canvas>
  <div class="in">
+  <a class="backhome" href="../">← Todas las materias</a>
   <div class="eyebrow">Libro de Daniel · Instituto Bíblico Filadelfia JV · Prof. Yaung Lee Munevar C.</div>
   <h1>Daniel: mapa de estudio</h1>
   <p>Todo el contenido de las clases 1 a 10, con cada versículo citado, las ilustraciones y la clase y diapositiva donde aparece. Incluye el taller de la estatua y, al final, un examen del segundo corte (clases 6 a 10) que se califica aquí mismo.</p>
@@ -368,6 +372,7 @@ nav.side a.tall b{color:var(--wine)}
 
 <div class="layout">
  <nav class="side" aria-label="Clases">
+  <a href="../" class="home-link">← Todas las materias</a>
   <div class="searchwrap"><input type="search" id="q" placeholder="Buscar tema o versículo…" aria-label="Buscar en el mapa"><span id="qn" class="mono"></span></div>
   <div class="grp">Primer corte</div>
   <a href="#clase-1" class="n1"><b>1</b><span>Introducción al libro</span></a><a href="#clase-2" class="n1"><b>2</b><span>Daniel 1</span></a><a href="#clase-3" class="n1"><b>3</b><span>Daniel 2</span></a><a href="#clase-4" class="n1"><b>4</b><span>Daniel 3–4</span></a><a href="#clase-5" class="n1"><b>5</b><span>Daniel 5–6</span></a><a href="#taller" class="n1 tall"><b>✎</b><span>Taller: la estatua</span></a>
